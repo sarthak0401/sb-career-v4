@@ -2,7 +2,7 @@ FROM python
 
 WORKDIR /app
 
-RUN git clone https://github.com/sarthak0401/sb-career-v3.git .
+RUN git clone https://github.com/sarthak0401/sb-career-v4.git .
 
 RUN git checkout containerization 
  
