@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  
+  <div class="border-bottom row" style="margin:1.5rem 5rem 1.5rem 5rem;">
+    <div class="col-10" style="margin:0px;">
+  <div> 
+  <h4>{{job['title']}}</h4>
+  </div>
+  
+    <div> 
+      <b>Location </b> :{{job['location']}} </div>
+    
+    {% if job['salary'] %}
+  <div>
+    <b>Salary</b>: {{job['salary']}}
+  </div>
+    
+  {% endif %}
+    </div>
+    <div class="col-2">
+      <a href="{{ url_for('apply_job', job_id=job['id']) }}">
+        <button type="button" class="btn btn-outline-info" style="margin-top:13px;">Apply</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .border-bottom-row {
+      border: 2px solid #ccc; 
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1.5rem 5rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      min-height: 9rem; 
+      display: flex;
+      align-items: center;
+    }
+    .col-10 {
+      flex: 1; /* Take up the remaining space */
+    }
+    .col-2 {
+      text-align: right; /* Align the button to the right */
+    }
+    .btn {
+      padding: 0.5rem 1rem; /* Padding inside the button */
+      font-size: 1rem; /* Font size */
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="border-bottom-row">
+    <div class="col-10">
+      <div> 
+        <h4>{{job['title']}}</h4>
+      </div>
+      <div> 
+        <b>Location </b> : {{job['location']}} 
+      </div>
+      {% if job['salary'] %}
+      <div>
+        <b>Salary</b>: {{job['salary']}}
+      </div>
+      {% endif %}
+    </div>
+    <div class="col-2">
+      <a href="{{ url_for('apply_job', job_id=job['id']) }}">
+        <button type="button" class="btn btn-outline-info" style="margin-top:13px;">Apply</button>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

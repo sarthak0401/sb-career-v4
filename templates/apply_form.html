@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for {{ job['title'] }}</title>
+  <style>
+    
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .outoutcont {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* margin: auto;  Centers the outer div horizontally */
+      background-color: #8BC6EC;
+      background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    }
+
+    .container-out {
+      width: 45rem;
+      height: 45rem;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      align-items: center;
+      /* justify-content: center; */
+      /*this made all the content to be at the total center leaves margin from all the sides*/
+      gap: 30px;
+    }
+
+
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=file],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .container-in1 {
+      margin-top: 2rem;
+      width: 70%;
+      text-align: center;
+    }
+
+    .container-in2 {
+      width: 70%;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 1.9rem;
+
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 1rem;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    input[type=submit] {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 4px;
+      background-color: #7faeec;
+      color: white;
+      border: none;
+      width: 17%;
+    }
+
+    .btn{
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .gradient-text {
+    background: linear-gradient(100deg, #30b7ac 20%, #63369e 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+}
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="outoutcont">
+    <div class="container-out">
+      <div class="container-in1">
+        <h2 class="gradient-text">Applying for {{ job['title'] }} role</h2>
+        <br><hr>
+      </div>
+
+      <div class="container-in2">
+        <form action="{{ url_for('apply_success', job_id=job['id']) }}" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-25">
+              <label for="aname">Name:</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="aname" name="aname" placeholder="Enter your name" required>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="email">Email:</label>
+            </div>
+            <div class="col-75">
+              <input type="email" id="email" name="email" placeholder="Enter your email-id ">
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="phone">Phone no:</label>
+            </div>
+            <div class="col-75">
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone no. "
+                pattern="(\+\d{1,3}[- ]?)?\d{1,13}" required>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="resume">Upload Resume: (PDF)</label>
+            </div>
+            <div class="col-75">
+              <input type="file" id="resume" name="resume" accept=".pdf" required>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="cover">Cover letter:</label>
+            </div>
+            <div class="col-75">
+              <textarea id="cover" name="cover" placeholder="It's okay to brag about your achievements!"
+                style="height:200px"></textarea>
+              <!-- <input type="file" id="resume" name="resume" accept=".pdf" required> -->
+            </div>
+          </div>
+
+
+          <!-- <button type="submit" class="btn btn-outline-info" style="margin-top:13px;">Submit</button> -->
+          <div class="btn">
+            <input type="submit" value="Submit">
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
