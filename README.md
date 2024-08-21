@@ -1,4 +1,7 @@
-# SB-careers-website
+<div align="center">
+  <h1>SB-careers-website </h1>
+  <p>"kubernetes implementation in k8s-setup branch"</p>
+</div>
 A careers website, in which I haved used the python framework flask to build this web application and made it functional, which will be running on a docker container. Upon clicking the apply button next to the jobs, an application form will appear.  And upon filling the details, it will get stored in the MySQL database running on the another container. This application also gives the function (route) to download the resume corresponding to a particular user, which will be useful for the recruiters
 
 - Install dependencies: [Docker](https://docs.docker.com/engine/install/), [Docker Compose plugin](https://docs.docker.com/compose/install/linux/)
