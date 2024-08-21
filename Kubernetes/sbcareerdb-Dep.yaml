@@ -47,7 +47,7 @@ spec:
       volumes:
         - name: sbcareer-datadb
           awsElasticBlockStore:
-            volumeID: vol-0ac8578a0ac5c549a
+            volumeID: vol-09e4af12ec8211383
             fsType: ext4
 
       initContainers:
