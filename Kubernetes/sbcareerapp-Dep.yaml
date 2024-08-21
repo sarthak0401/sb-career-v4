@@ -21,6 +21,19 @@ spec:
           ports:
             - name: sbcapp-port
               containerPort: 5000
+          env:
+            - name: MYSQL_HOST
+              value: sbcareerdb
+            - name: MYSQL_USER
+              value: admin
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: userdb-pass
+            - name: MYSQL_DATABASE
+              value: db-user
+
       initContainers:
         - name: init-sbcareerapp
           image: busybox
