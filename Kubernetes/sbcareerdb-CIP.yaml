@@ -3,10 +3,8 @@ kind: Service
 metadata: 
   name: sbcareerdb
 spec:
-  type: ClusterIP   # By default the type is clusterIP, we can neglect this 
   ports:
     - port: 3306
-      targetPort: sbcareerdb-port
       protocol: TCP
 
   selector:
