@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sbcareerapp
+  labels:
+    app: sbcareerapp
+
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sbcareerapp
+  template:
+    metadata:
+      labels:
+        app: sbcareerapp
+    spec: 
+      containers:
+        - name: sbcareerapp
+          image: sarthakb413/sbcareers-flaskapp
+          ports:
+            - name: sbcareerapp-port
+              port: 5000
+      initContainers:
+        - name: init-sbcareerapp
+          image: busybox
+          command: ["-sh", "-c", "until nslookup sbcareerdb; do echo waiting for dbservice; sleep 2; done "]        
