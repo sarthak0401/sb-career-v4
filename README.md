@@ -44,6 +44,8 @@ A careers website, in which I haved used the python framework flask to build thi
 
 ![image](https://github.com/user-attachments/assets/d2949269-2125-4822-9276-7f1779ccbe98)
 
+## Do check the kubernetes implementation of this project : https://github.com/sarthak0401/sb-career-v4/tree/k8s-setup
+
 
 <div align="center">
 <p>Thank you for checking out my project :) </p>
