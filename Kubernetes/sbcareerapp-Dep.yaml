@@ -4,7 +4,6 @@ metadata:
   name: sbcareerapp
   labels:
     app: sbcareerapp
-
 spec: 
   replicas: 1
   selector:
