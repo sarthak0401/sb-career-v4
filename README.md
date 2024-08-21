@@ -56,7 +56,17 @@ NOTE: For the Virtual machine having the kubernetes running, Configure AWS CLI w
 ![image](https://github.com/user-attachments/assets/458e4fb5-95ab-418c-93b4-8c07ec795333)
 ![image](https://github.com/user-attachments/assets/b8204f72-0248-49f7-a3e7-4b1246014558)
 
+![image](https://github.com/user-attachments/assets/99d3f511-bb4a-48ec-9b90-36f593fecded)
 
+![image](https://github.com/user-attachments/assets/b6115376-877c-42b0-8da1-c38453d12a56)
+
+- Created a new EC2 instance named MyInstance and attached the EBS block storage(3Gb) which we used to store the MySQL data to it, mounted the disk inside the EC2 instance on /mnt/ebs-vol directory
+
+![image](https://github.com/user-attachments/assets/f42a7480-5f97-4bc8-930f-9b6a1e04af00)
+
+- We can see the MySQL data is there inside this EBS volume, this verifies the MySQL data uploaded successfully on attached EBS vol 
+
+![image](https://github.com/user-attachments/assets/cee20e35-bfc4-487d-a061-b6348521e301)
 
 - Optional: Create a AWS route53 route to the loadBalancer's endpoint. I have created a simple DNS record in route53 hosted zone, which is connecting the application load balancer's endpoint to my domain "sbdevops.xyz". We can access application using this URL also (Notice the URL entered in browser)
 
