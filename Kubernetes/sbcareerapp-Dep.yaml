@@ -31,7 +31,7 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: userdb-pass
-            - name: MYSQL_DATABASE
+            - name: MYSQL_DB
               value: db-user
 
       initContainers:
