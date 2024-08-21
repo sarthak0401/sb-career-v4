@@ -53,7 +53,7 @@ spec:
       initContainers:
         - name: dellostnfound
           image: busybox:latest
-          args: ["rm", "rf","/var/lib/mysql/lost+found"]
+          args: ["sh", "-c", "if [ -d /var/lib/mysql/lost+found ]; then rm -rf /var/lib/mysql/lost+found; fi"]
           volumeMounts:
             - name: sbcareer-datadb
               mountPath: /var/lib/mysql
