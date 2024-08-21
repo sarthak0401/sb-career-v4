@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sbcareerdb
+  labels:
+    app: sbcareerdb
+
+spec:
+  selector:
+    matchLabels:
+      app: sbcareerdb
+
+  replicas: 1
+  template: 
+    metadata:   
+      labels:
+        app: sbcareerdb
+    spec:
+      containers:
+        - name: sbcareerdb
+          image: sarthakb413/sbcareers-db
+          ports:
+            - name: sbcareerdb-port
+              containerPort: 3306
+
+          volumeMounts: 
+            - mountPath: /var/lib/mysql
+              name: sbcareer-datadb
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: rootdb-pass
+            - name: MYSQL_USER
+              value: admin
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: userdb-pass
+            - name: MYSQL_DATABASE
+              value: db-user
+
+      nodeSelector:
+        zone: us-east-1a
+      volumes:
+        - name: sbcareer-datadb
+          awsElasticBlockStore:
+            volumeID: vol-065277eb707315522
+            fsType: ext4
+
+      initContainers:
+        - name: dellostnfound
+          image: busybox:latest
+          args: ["rm", "rf","/var/lib/mysql/lost+found"]
+          volumeMounts:
+            - name: sbcareer-datadb
+              mountPath: /var/lib/mysql
