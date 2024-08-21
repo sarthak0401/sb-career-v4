@@ -19,7 +19,7 @@ spec:
         - name: sbcareerapp
           image: sarthakb413/sbcareers-flaskapp
           ports:
-            - name: sbcareerapp-port
+            - name: sbcapp-port
               containerPort: 5000
       initContainers:
         - name: init-sbcareerapp
