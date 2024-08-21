@@ -24,4 +24,4 @@ spec:
       initContainers:
         - name: init-sbcareerapp
           image: busybox
-          command: ["sh", "-c", "until nslookup sbcareerdb; do echo waiting for dbservice; sleep 2; done "]        
+          args: ["sh", "-c", "until nslookup sbcareerdb; do echo waiting for dbservice; sleep 2; done "]        
