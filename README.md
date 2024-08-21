@@ -56,8 +56,12 @@ NOTE: For the Virtual machine having the kubernetes running, Configure AWS CLI w
 ![image](https://github.com/user-attachments/assets/458e4fb5-95ab-418c-93b4-8c07ec795333)
 ![image](https://github.com/user-attachments/assets/b8204f72-0248-49f7-a3e7-4b1246014558)
 
+- Getting into the MySQL container pod to check if the user data entry is added in the database or not
+
 ![image](https://github.com/user-attachments/assets/99d3f511-bb4a-48ec-9b90-36f593fecded)
 
+- We can see the entry of the user data from the application form is present
+  
 ![image](https://github.com/user-attachments/assets/b6115376-877c-42b0-8da1-c38453d12a56)
 
 - Created a new EC2 instance named MyInstance and attached the EBS block storage(3Gb) which we used to store the MySQL data to it, mounted the disk inside the EC2 instance on /mnt/ebs-vol directory
