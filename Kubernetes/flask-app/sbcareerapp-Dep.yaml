@@ -20,7 +20,7 @@ spec:
           image: sarthakb413/sbcareers-flaskapp
           ports:
             - name: sbcareerapp-port
-              port: 5000
+              containerPort: 5000
       initContainers:
         - name: init-sbcareerapp
           image: busybox
