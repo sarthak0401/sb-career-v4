@@ -5,7 +5,7 @@ metadata:
 spec: 
   ports:
     - port: 80
-      targetPort: 5000
+      targetPort: sbcapp-port
       protocol: TCP
   selector:
     app: sbcareerapp
