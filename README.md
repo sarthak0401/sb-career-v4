@@ -41,14 +41,13 @@ NOTE: For the Virtual machine having the kubernetes running, Configure AWS CLI w
 
 - Set the zone label to the node instances : ```kubectl label nodes <name-of-the-node-having-zone-us-east-1a> zone=us-east-1a```
 
-- Create the resources from the definition files : ```kubectl apply -f .```
 
 <br>
 <div align="center">
   <h2>Demo</h2>
 </div>
 
-- Access the application using the LoadBalancer's endpoint
+- Access the application using the AWS Elastic LoadBalancer's endpoint
 
 ![image](https://github.com/user-attachments/assets/211c54e4-a25c-4d3a-8ba0-a6935aa86e38)
 
@@ -59,7 +58,7 @@ NOTE: For the Virtual machine having the kubernetes running, Configure AWS CLI w
 
 
 
-- Optional: Create a route53 route to the loadBalancer's endpoint. I have created a simple DNS record in route53 hosted zone, which is connecting the application load balancer's endpoint to my domain "sbdevops.xyz". We can access application using this URL also (Notice the URL entered in browser)
+- Optional: Create a AWS route53 route to the loadBalancer's endpoint. I have created a simple DNS record in route53 hosted zone, which is connecting the application load balancer's endpoint to my domain "sbdevops.xyz". We can access application using this URL also (Notice the URL entered in browser)
 
 ![image](https://github.com/user-attachments/assets/7c94e165-0e5d-4f49-bf63-1f2a81b0bf5a)
 
